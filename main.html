@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="owl.carousel.min.css">
+<link rel="stylesheet" href="owl.theme.default.min.css">
+    <title>Main page</title>
+</head>
+<body>
+    <?php 
+    error_reporting(0);
+    if($_COOKIE['user'] == ''): ?>
+
+    <div class="menu">
+        <div class="logo"><img src="images/logo.png" alt=""></div>
+      
+        <div class="communicate">
+            
+
+            <div id="mmenu" class="basket"><a href="#">Корзина<img src="images/корзинка.png" alt=""></a></div>
+            <div id="mmenu" class="history"><a href="#">История<img src="images/history 1.png" alt=""></a></div>
+            <div id="mmenu" class="choose"><a href="#">Избраное<img src="images/сердце.png" alt=""></a></div>
+            <div id="mmenu" class="main"><a href="#">Главная<img src="images/меню.png" alt=""></a></div>
+            <ul class="qmenu">Меню
+                <li id="first" class="menu-element"><a href="personal_cabinet.html">Личный кабинет</a></li>
+                <li id="s"class="menu-element"><a href="#">Благодарность</a></li>
+                <li id="o"class="menu-element"><a href="#">О разработчике</a></li>
+                <li id="last" class="menu-element"><a href="exit.php">Exit<img src="images/logout.png" alt=""></a></li>  
+          </ul>
+    </div>
+</div>
+
+
+    <div class="owl-carousel">
+        <div><img src="images/mainWall.png" alt=""></div>
+        <div> <img src="images/firstWall.png" alt=""></div>
+        <div><img src="images/secondWall.png" alt=""></div>
+        <div><img src="images/thirdWall.png" alt=""></div>
+        <div> <img src="images/fourWall.png" alt=""> </div>
+        <div> <img src="images/fiveWall.png" alt=""></div>
+      </div>
+    <?php else:?>
+        <?php header('Location: /SpecialStyle/main.php');?>
+     <?php endif;?>
+
+
+     
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <script src="owl.carousel.min.js"></script>
+        <script src="script.js"></script>
+    <script> 
+    let flag = false;
+        $('.qmenu').click(function () {
+          if(!flag){
+           $('.menu-element').slideDown();
+          }else{
+           $('.menu-element').slideUp();
+          }
+          flag = !flag;
+        });
+
+        $(document).ready(function(){
+  $(".owl-carousel").owlCarousel();
+        
+});
+        </script>
+</body>
+</html>
