@@ -3,7 +3,7 @@ $(document).ready(function(){
         
         loop: true,
         nav: false,
-        dots: true,
+        dots: false,
          items:1,
       mouseDrag: false,
       mergeFit: false,
@@ -19,7 +19,7 @@ $(document).ready(function(){
       var owl = $('.owl-carousel');
   owl.owlCarousel({
       nav:true,
-      margin:20,
+      margin:0,
       responsive:{
           0:{
               items:1,

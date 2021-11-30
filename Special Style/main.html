@@ -2,6 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" href="images/ss.png" type="image/x-icon">
     <link rel="stylesheet" href="styles/main.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="owl.carousel.min.css">
@@ -11,7 +12,7 @@
 <body>
     <?php 
     error_reporting(0);
-    if($_COOKIE['user'] == ''): ?>
+    ?>
 
     <div class="menu">
         <div class="logo"><img src="images/logo.png" alt=""></div>
@@ -23,7 +24,7 @@
             <div id="mmenu" class="history"><a href="#">История<img src="images/history 1.png" alt=""></a></div>
             <div id="mmenu" class="choose"><a href="#">Избраное<img src="images/сердце.png" alt=""></a></div>
             <div id="mmenu" class="main"><a href="#">Главная<img src="images/меню.png" alt=""></a></div>
-            <ul class="qmenu">Меню
+            <ul class="qmenu" ><img class="dd" src="images/squares.png" alt="">
                 <li id="first" class="menu-element"><a href="personal_cabinet.html">Личный кабинет</a></li>
                 <li id="s"class="menu-element"><a href="#">Благодарность</a></li>
                 <li id="o"class="menu-element"><a href="#">О разработчике</a></li>
@@ -31,8 +32,6 @@
           </ul>
     </div>
 </div>
-
-
     <div class="owl-carousel">
         <div><img src="images/mainWall.png" alt=""></div>
         <div> <img src="images/firstWall.png" alt=""></div>
@@ -41,22 +40,37 @@
         <div> <img src="images/fourWall.png" alt=""> </div>
         <div> <img src="images/fiveWall.png" alt=""></div>
       </div>
-    <?php else:?>
-        <?php header('Location: /SpecialStyle/main.php');?>
-     <?php endif;?>
+      <div class="center">
+          <div>Window 1</div>
+          <div>Window 1</div>
+          <div>Window 1</div>
+      </div>
+    
 
 
      
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
         <script src="owl.carousel.min.js"></script>
         <script src="script.js"></script>
-    <script> 
-    let flag = false;
+    <script>
+     let flag = false;
+        rotate = 0;
+
         $('.qmenu').click(function () {
           if(!flag){
+              rotate+=45;
+            $('.dd').css({
+                transform: 'rotate(' + rotate + 'deg)',
+                transition: 0.75+'s'
+            });
            $('.menu-element').slideDown();
           }else{
+            rotate+=45;
            $('.menu-element').slideUp();
+           $('.dd').css({
+                transform: 'rotate(' + rotate + 'deg)',
+                transition: 0.75+'s'
+            });
           }
           flag = !flag;
         });
