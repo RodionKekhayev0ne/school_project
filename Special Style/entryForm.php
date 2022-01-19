@@ -2,6 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" href="images/ss.png" type="image/x-icon">
     <link rel="stylesheet" href="styles/styleforentry.css">
     <title>Entry</title>
 </head>
@@ -17,8 +18,8 @@ if($_COOKIE['user'] == ''): ?>
     <div class="container">
         <h1 class="form_title">Вход</h1>
         <form action="php/auth.php" method="POST">
-            <input type="text" class="form_controlemail" name="name" id="name" placeholder="Введите ваше имя">
-            <input type="text" class="form_controlpass" name="pass" id="pass"  placeholder="Введите ваш пароль">
+            <input autocomplete="off" type="text" class="form_controlemail" name="name" id="name" placeholder="Введите ваше имя">
+            <input autocomplete="off" type="password" class="form_controlpass" name="pass" id="pass"  placeholder="Введите ваш пароль">
             <button class="btn btn-form" type="submit">Войти</button>
             <a href="registrationForm.php">Зарегистрироваться </a>
         </form>

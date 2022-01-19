@@ -17,12 +17,26 @@ $name = filter_var(trim($_POST['name']), FILTER_SANITIZE_STRING);
    }
 
 
-  $pass = md5($pass."gfhtyrhn3324");
+$message = '
+<html>
+<body>
+<center>
+<table style="max-width: 600px; width: 100%;">
+        <tr><td><img src="email.jpg"><td><tr>
+';
+
+$headers = "Content-type: text/html; charset=utf-8\r\n";
+
+   mail($email,'Благодарность',$message,$headers);
+
+  $pass = md5($pass."gfhtyrhn9374");
 
   $mysql = new mysqli('localhost','root','2006','usersdata');
 
   $mysql->query("INSERT INTO `users` (`email` , `pass`, `name`) VALUES('$email','$pass','$name' )");
   $mysql->close();
+
+  
 
   header('Location: /SpecialStyle/main.php');
 
